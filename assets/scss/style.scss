@@ -1,0 +1,329 @@
+@charset "utf-8";
+
+$ff_en: 'Montserrat', sans-serif;
+    
+$mq-breakpoints: (
+    'xsmall': 320px,
+    'small' : 600px,
+    'medium': 768px,
+    'large' : 1024px,
+    'xlarge': 1280px,
+);
+
+@mixin mq($breakpoint: medium) {
+    @media screen and (max-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    &::before, &::after {
+        box-sizing: border-box;
+    }
+}       
+html {
+    font-size: 62.5%;
+}
+body {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #000;
+    background: #C4CCEB;
+    font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    font-size: inherit;
+}
+li {
+    list-style: none;
+}
+a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.view_pc {
+    display: block;
+    @include mq {
+        display: none;
+    }
+}
+.view_sp {
+    display: none;
+    @include mq {
+        display: block;
+    }
+}
+
+section {
+    // padding: 0 10vw;
+
+}
+
+.container {
+    padding: 0 10vw;
+
+    @include mq {
+        padding: 0 5vw;
+    }
+    // @media screen and (min-width: 1440px) {
+    //     max-width: 1280px;
+    //     padding: 0;
+    //     margin: 0 auto;
+    // }
+}
+
+.main {
+    .hero {
+        .site-ttl {
+            margin-top: 2vw;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            &::before {
+                content: url(../img/img-icon.png);
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 1vw;
+            }
+        }
+        &-catch {
+            margin-top: 11vw;
+            span {
+                display: inline-block;
+                font-size: 8rem;
+                font-size: calc(6rem + ((1vw - 0.77rem) * 3.773));
+
+                line-height: 2.25;
+                padding: 0 .5em;
+                font-weight: bold;
+                background: #fff;
+                @include mq {
+                    font-size: 2.6rem;
+                }
+                &:last-child {
+                    margin-top: 26px;
+                    margin-top: 2vw;
+                }
+            }
+        }
+    }
+    .diagnose {
+        margin-top: 20vw;
+        @include mq {
+            margin-top: 13vw;
+        }
+        &-ttl {
+            font-size: 5rem;
+            text-align: center;
+            font-family: $ff_en;
+            font-weight: 500;
+            &::before, &::after  {
+                content: "";
+                content: url(../img/img-diagnose-icon.png);
+                // background: url(../img/diagnose_ttl.png) center center/cover;
+                vertical-align: middle;
+                display: inline-block;
+                margin: 0 2vw;
+            }
+        }
+        &-inner {
+            margin-top: 4vw;
+            // padding: 8vw 11vw 4vw 14vw;
+            padding: 10% 12% 4% 17%;
+            border: 15px solid #fff;
+            border-radius: 43px;
+            @include mq {
+                margin-top: 24vw;
+                padding: 16vw 11vw 14vw 10vw;
+                border: 8px solid #fff;
+            }
+        }
+        &-point {
+            font-size: 10rem;
+            line-height: 1;
+            text-align: center;
+            @include mq {
+                font-size: 5rem;
+            }
+            span {
+                font-size: 16rem;
+                @include mq {
+                    font-size: 8rem;
+                }
+            }
+            &::after {
+                // content: url(../img/img-diagnose-border.png);
+                content: "";
+                background: url(../img/img-diagnose-border.png) center center/cover;
+                max-width: 547px;
+                height: 19px;
+                display: block;
+                margin: 3vw auto 0;
+                
+            }
+        }
+        &-txt {
+            margin-top: 4vw;
+            font-size: 3rem;
+            line-height: 1.67;
+            @include mq {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .intro {
+        margin-top: 19vw;
+        &-ttl {
+            font-size: 8rem;
+            font-weight: bold;
+            text-align: center;
+            @include mq {
+                font-size: 2.3rem;
+            }
+            &::before, &::after {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                width: 13px;
+                height: 95px;
+                border-radius: 11px;
+                background: #fff;
+                transform: rotate(-32deg);
+                margin: 0 2vw;
+            }
+            &::after {
+                transform: rotate(32deg);
+            }
+        }
+        &-inner {
+            margin-top: 7vw;
+            display: flex;
+            justify-content: space-between;
+            @include mq {
+                margin-top: 15vw;
+                flex-direction: column;
+            }
+        }
+        &-img {
+            width: 27vw;
+            @include mq {
+                width: 100%;
+            }
+        }
+        &-desc {
+            width: 45vw;
+            @include mq {
+                width: 100%;
+                margin-top: 19vw;
+            }
+        }
+        &-txt {
+            font-size: 20px;
+            line-height: 1.5;
+            &:not(:first-child) {
+                margin-top: 2em;
+            }
+        }
+        &-btn {
+            margin-top: 7vw;
+            width: 401px;
+            height: 91px;
+            border-radius: 51px;
+            background: #fff;
+            text-align: center;
+            box-shadow: 7.2px 9px;
+            @include mq {
+                margin: 29vw auto 0;
+                max-width: 329px;
+                height: 75px;
+            }
+            a {
+                font-size: 4rem;
+                line-height: 9.1rem;
+                font-weight: 500;
+                font-family: $ff_en;
+                @include mq {
+                    line-height: 75px;
+                }
+            }
+        }
+    }
+    .person {
+        margin-top: 28vw;
+        background: #fff;
+        .container {
+            padding: 6vw 17.5vw 15vw;
+            @include mq {
+                padding: 33vw 7vw 46vw 7vw;
+            }
+            // @media screen and (min-width: 1440px) {
+            //     max-width: 1280px;
+            //     padding: 0;
+            // }
+        }
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            @include mq {
+                flex-direction: column;
+            }
+        }
+        &-item {
+            width: 25vw;
+            @include mq {
+                width: 100%;
+                &:nth-child(2) {
+                    margin-top: 37vw;
+                }
+            }
+        }
+        &-thum {
+            @include mq {
+                width: 65.6vw;
+                margin: 0 auto;
+            }
+        }
+        &-name {
+            margin-top: 107px;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+        &-txt {
+            margin-top: 16px;
+            line-height: 1.75;
+        }
+        &-sns {
+            margin-top: 43px;
+            display: flex;
+            &:nth-of-type(2) {
+                margin-top: 17px;
+            }
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 18vw;
+        &-inner {
+            display: flex;
+        }
+        &-list {
+            display: flex;
+            &:nth-child(2) {
+                margin-left: 5vw;
+            }
+        }
+    }
+}
