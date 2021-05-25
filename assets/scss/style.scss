@@ -1,21 +1,21 @@
 @charset "utf-8";
 
+$ff_main: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
 $ff_en: 'Montserrat', sans-serif;
-    
+$c_main: #C4CCEB;
+
 $mq-breakpoints: (
     'xsmall': 320px,
-    'small' : 600px,
-    'medium': 768px,
+    'small' : 375px,
+    'medium': 600px,
     'large' : 1024px,
     'xlarge': 1280px,
 );
-
 @mixin mq($breakpoint: medium) {
     @media screen and (max-width: #{map-get($mq-breakpoints, $breakpoint)}) {
         @content;
     }
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -31,10 +31,9 @@ body {
     font-weight: bold;
     font-size: 1.6rem;
     color: #000;
-    background: #C4CCEB;
-    font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;;
+    background: $c_main;
+    font-family: $ff_main;
 }
-
 h1, h2, h3 {
     font-weight: normal;
     font-size: inherit;
@@ -51,7 +50,6 @@ img {
     width: 100%;
     vertical-align: bottom;
 }
-
 .view_pc {
     display: block;
     @include mq {
@@ -64,29 +62,19 @@ img {
         display: block;
     }
 }
-
-section {
-    // padding: 0 10vw;
-
-}
-
 .container {
-    padding: 0 10vw;
-
+    width: 78.4%;
+    max-width: 1004px;
+    margin: 0 auto;
     @include mq {
-        padding: 0 5vw;
+        width: 89.33vw;
     }
-    // @media screen and (min-width: 1440px) {
-    //     max-width: 1280px;
-    //     padding: 0;
-    //     margin: 0 auto;
-    // }
 }
 
 .main {
     .hero {
         .site-ttl {
-            margin-top: 2vw;
+            margin-top: 2.3%;
             font-size: 2rem;
             font-weight: bold;
             text-align: center;
@@ -94,138 +82,206 @@ section {
                 content: url(../img/img-icon.png);
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 1vw;
+                margin-right: 1.43%;
             }
         }
         &-catch {
-            margin-top: 11vw;
+            margin-top: 14%;
+            @include mq {
+                margin-top: 9.7vw;
+            }
             span {
                 display: inline-block;
-                font-size: 8rem;
-                font-size: calc(6rem + ((1vw - 0.77rem) * 3.773));
-
+                font-size: calc(2.6rem + ((1vw - 0.378rem) * 5.9866));
                 line-height: 2.25;
                 padding: 0 .5em;
                 font-weight: bold;
                 background: #fff;
-                @include mq {
+                @media screen and (min-width: 1280px) {
+                    font-size: 8rem;
+                }
+                @include mq(small) {
                     font-size: 2.6rem;
                 }
                 &:last-child {
-                    margin-top: 26px;
-                    margin-top: 2vw;
+                    margin-top: 2.58%;
                 }
+            }
+        }
+        &-btn {
+            margin: 5.07% auto 0;
+            width: 37px;
+            height: 37px;
+            transform: rotate(45deg);
+            position: relative;
+            @include mq {
+                margin: 30.48vw auto 0;
+            }
+            &::before, &::after {
+                content: "";
+                display: block;
+                width: 37px;
+                height: 10px;
+                border-radius: 3px;
+                background: #000;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            &::after {
+                width: 10px;
+                height: 37px;
             }
         }
     }
     .diagnose {
-        margin-top: 20vw;
-        @include mq {
-            margin-top: 13vw;
-        }
         &-ttl {
+            margin-top: 26.2%;
             font-size: 5rem;
             text-align: center;
             font-family: $ff_en;
             font-weight: 500;
+            font-size: calc(1.9rem + ((1vw - 0.378rem) * 3.4368));
+            @media screen and (min-width: 1280px) {
+                font-size: 5rem;
+            }
+            @include mq {
+                margin-top: 13.25vw;
+            }
+            @include mq(small) {
+                font-size: 1.9rem;
+            }
             &::before, &::after  {
                 content: "";
-                content: url(../img/img-diagnose-icon.png);
-                // background: url(../img/diagnose_ttl.png) center center/cover;
+                background: url(../img/img-diagnose-icon.png) center center/contain no-repeat;
+                width: 5.62vw;
+                max-width: 72px;
+                min-width: 27px;
+                height: 5.46vw;
+                min-height: 70px;
+                min-height: 27px;
                 vertical-align: middle;
                 display: inline-block;
-                margin: 0 2vw;
+                margin: 0 2.76%;
+                @include mq {
+                    background: url(../img/img-diagnose-icon.png) center center/cover;
+                    width: 7.2vw;
+                    height: 6.89vw;
+                }
             }
         }
         &-inner {
-            margin-top: 4vw;
-            // padding: 8vw 11vw 4vw 14vw;
-            padding: 10% 12% 4% 17%;
+            margin-top: 5.1%;
+            padding: 10.2% 13.9% 5.7% 17.4%;
             border: 15px solid #fff;
             border-radius: 43px;
             @include mq {
-                margin-top: 24vw;
-                padding: 16vw 11vw 14vw 10vw;
+                margin-top: 24.8vw;
+                padding: 13.88vw 8.8vw 18.13vw 8.26vw;
                 border: 8px solid #fff;
+            }
+            span {
+                display: inline;
             }
         }
         &-point {
-            font-size: 10rem;
+            font-size: calc(5rem + ((1vw - 0.378rem) * 5.5432));
             line-height: 1;
             text-align: center;
-            @include mq {
+            @media screen and (min-width: 1280px) {
+                font-size: 10rem;
+            }
+            @include mq(small) {
                 font-size: 5rem;
             }
             span {
-                font-size: 16rem;
-                @include mq {
+                font-size: calc(8rem + ((1vw - 0.378rem) * 8.8691));
+                @media screen and (min-width: 1280px) {
+                    font-size: 16rem;
+                }
+                @include mq(small) {
                     font-size: 8rem;
                 }
             }
             &::after {
-                // content: url(../img/img-diagnose-border.png);
+                margin: 3.9% auto 0;
                 content: "";
                 background: url(../img/img-diagnose-border.png) center center/cover;
                 max-width: 547px;
                 height: 19px;
                 display: block;
-                margin: 3vw auto 0;
-                
+                @include mq {
+                    margin: 5.33vw auto 0;
+                    background: url(../img/img-diagnose-border_sp.png) center center/cover;
+
+                }
             }
         }
         &-txt {
-            margin-top: 4vw;
-            font-size: 3rem;
+            margin-top: 5.2%;
+            font-size: calc(1.8rem + ((1vw - 0.378rem) * 1.3303));
             line-height: 1.67;
+            @media screen and (min-width: 1280px) {
+                font-size: 3rem;
+            }
             @include mq {
+                margin-top: 18.8vw;
+            }
+            @include mq(small) {
                 font-size: 1.8rem;
             }
         }
     }
     .intro {
-        margin-top: 19vw;
         &-ttl {
-            font-size: 8rem;
+            margin-top: 24.8%;
             font-weight: bold;
             text-align: center;
-            @include mq {
+            font-size: calc(2.3rem + ((1vw - 0.378rem) * 6.3192));
+            @media screen and (min-width: 1280px) {
+                font-size: 8rem;
+            }
+            @include mq(small) {
                 font-size: 2.3rem;
             }
             &::before, &::after {
                 content: "";
                 display: inline-block;
                 vertical-align: middle;
-                width: 13px;
-                height: 95px;
+                width: 1.01vw;
+                max-width: 13px;
+                height: 7.42vw;
+                max-height: 95px;
                 border-radius: 11px;
                 background: #fff;
                 transform: rotate(-32deg);
-                margin: 0 2vw;
+                margin: 0 2.3%;
             }
             &::after {
                 transform: rotate(32deg);
             }
         }
         &-inner {
-            margin-top: 7vw;
+            margin-top: 8.5%;
             display: flex;
             justify-content: space-between;
             @include mq {
-                margin-top: 15vw;
+                margin-top: 13.94vw;
                 flex-direction: column;
             }
         }
         &-img {
-            width: 27vw;
+            width: 33.9%;
             @include mq {
                 width: 100%;
             }
         }
         &-desc {
             width: 45vw;
+            width: 57.6%;
             @include mq {
                 width: 100%;
-                margin-top: 19vw;
+                margin-top: 18.8vw;
             }
         }
         &-txt {
@@ -236,15 +292,15 @@ section {
             }
         }
         &-btn {
-            margin-top: 7vw;
-            width: 401px;
+            margin-top: 17.27%;
+            max-width: 401px;
             height: 91px;
             border-radius: 51px;
             background: #fff;
             text-align: center;
             box-shadow: 7.2px 9px;
             @include mq {
-                margin: 29vw auto 0;
+                margin: 32vw auto 0;
                 max-width: 329px;
                 height: 75px;
             }
@@ -259,55 +315,73 @@ section {
             }
         }
     }
-    .person {
-        margin-top: 28vw;
+    .person {        
         background: #fff;
         .container {
-            padding: 6vw 17.5vw 15vw;
+            width: 83%;
+            max-width: 834px;
             @include mq {
-                padding: 33vw 7vw 46vw 7vw;
+                width: 85.86vw;
             }
-            // @media screen and (min-width: 1440px) {
-            //     max-width: 1280px;
-            //     padding: 0;
-            // }
         }
         &-list {
+            margin-top: 38.3%;
+            padding: 9.7% 0 22.5% 0;
             display: flex;
             justify-content: space-between;
             @include mq {
+                margin-top: 27.81vw;
+                padding: 33.06vw 0 46.13vw 0;
                 flex-direction: column;
             }
         }
         &-item {
-            width: 25vw;
+            width: 40.76%;
             @include mq {
                 width: 100%;
                 &:nth-child(2) {
-                    margin-top: 37vw;
+                    margin-top: 37.33vw;
                 }
             }
         }
         &-thum {
-            @include mq {
-                width: 65.6vw;
+            @include mq{
+                width: 65.5vw;
                 margin: 0 auto;
             }
         }
         &-name {
-            margin-top: 107px;
-            font-size: 3.2rem;
+            margin-top: 33%;
+            font-size: calc(3rem + ((1vw - 0.378rem) * 0.2217));
             line-height: 1;
+            @media screen and (min-width: 1280px) {
+                font-size: 3.2rem;
+            }
+            @include mq {
+                margin-top: 10.4vw;
+            }
+            @include mq(small) {
+                font-size: 3rem;
+            }
         }
         &-txt {
-            margin-top: 16px;
+            margin-top: 4.9%;
             line-height: 1.75;
+            @include mq {
+                margin-top: 5.33vw;
+            }
         }
         &-sns {
-            margin-top: 43px;
+            margin-top: 15.43%;
             display: flex;
+            @include mq {
+                margin-top: 5.6vw;
+            }
             &:nth-of-type(2) {
-                margin-top: 17px;
+                margin-top: 5.24%;
+                @include mq {
+                    margin-top: 4.26vw;
+                }
             }
         }
     }
@@ -316,13 +390,15 @@ section {
         justify-content: center;
         align-items: center;
         height: 18vw;
+        max-height: 227px;
+        min-height: 90px;
         &-inner {
             display: flex;
         }
         &-list {
             display: flex;
             &:nth-child(2) {
-                margin-left: 5vw;
+                margin-left: 4.76vw;
             }
         }
     }
