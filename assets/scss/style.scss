@@ -3,6 +3,8 @@
 $ff_main: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
 $ff_en: 'Montserrat', sans-serif;
 $c_main: #C4CCEB;
+$con_w: 1004;
+$b_w_sp: 375;
 
 $mq-breakpoints: (
     'xsmall': 320px,
@@ -63,18 +65,18 @@ img {
     }
 }
 .container {
-    width: 78.4%;
-    max-width: 1004px;
+    width: ($con_w/1280)*100%;
+    max-width: #{$con_w}px;
     margin: 0 auto;
     @include mq {
-        width: 89.33vw;
+        width: (335/$b_w_sp)*100vw;
     }
 }
 
 .main {
     .hero {
         .site-ttl {
-            margin-top: 2.3%;
+            margin-top: (24/$con_w)*100%;
             font-size: 2rem;
             font-weight: bold;
             text-align: center;
@@ -82,13 +84,13 @@ img {
                 content: url(../img/img-icon.png);
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 1.43%;
+                margin-right: (14.4/$con_w)*100%;
             }
         }
         &-catch {
-            margin-top: 14%;
+            margin-top: (141.4/$con_w)*100%;
             @include mq {
-                margin-top: 9.7vw;
+                margin-top: (36.4/$b_w_sp)*100vw;
             }
             span {
                 display: inline-block;
@@ -104,18 +106,18 @@ img {
                     font-size: 2.6rem;
                 }
                 &:last-child {
-                    margin-top: 2.58%;
+                    margin-top: (26/$con_w)*100%;
                 }
             }
         }
         &-btn {
-            margin: 5.07% auto 0;
+            margin: (51.3/$con_w)*100% auto 0;
             width: 37px;
             height: 37px;
             transform: rotate(45deg);
             position: relative;
             @include mq {
-                margin: 30.48vw auto 0;
+                margin: (114.3/$b_w_sp)*100vw auto 0;
             }
             &::before, &::after {
                 content: "";
@@ -136,7 +138,7 @@ img {
     }
     .diagnose {
         &-ttl {
-            margin-top: 26.2%;
+            margin-top: (263.6/$con_w)*100%;
             font-size: 5rem;
             text-align: center;
             font-family: $ff_en;
@@ -146,7 +148,7 @@ img {
                 font-size: 5rem;
             }
             @include mq {
-                margin-top: 13.25vw;
+                margin-top: (49.73/$b_w_sp)*100vw;
             }
             @include mq(small) {
                 font-size: 1.9rem;
@@ -154,30 +156,30 @@ img {
             &::before, &::after  {
                 content: "";
                 background: url(../img/img-diagnose-icon.png) center center/contain no-repeat;
-                width: 5.62vw;
+                width: (72/1280)*100vw;
                 max-width: 72px;
                 min-width: 27px;
-                height: 5.46vw;
+                height: (70/1280)*100vw;
                 min-height: 70px;
                 min-height: 27px;
                 vertical-align: middle;
                 display: inline-block;
-                margin: 0 2.76%;
+                margin: 0 (27.8/$con_w)*100%;
                 @include mq {
                     background: url(../img/img-diagnose-icon.png) center center/cover;
-                    width: 7.2vw;
-                    height: 6.89vw;
+                    width: (27/$b_w_sp)*100vw;
+                    height: (25.86/$b_w_sp)*100vw;
                 }
             }
         }
         &-inner {
-            margin-top: 5.1%;
-            padding: 10.2% 13.9% 5.7% 17.4%;
+            margin-top: (52/$con_w)*100%;
+            padding: (103/$con_w)*100% (125/$con_w)*100% (58/$con_w)*100% (175/$con_w)*100%;
             border: 15px solid #fff;
             border-radius: 43px;
             @include mq {
-                margin-top: 24.8vw;
-                padding: 13.88vw 8.8vw 18.13vw 8.26vw;
+                margin-top: (93.1/$b_w_sp)*100vw;
+                padding: (52/$b_w_sp)*100vw (33/$b_w_sp)*100vw (68/$b_w_sp)*100vw (31/$b_w_sp)*100vw;
                 border: 8px solid #fff;
             }
             span {
@@ -204,28 +206,28 @@ img {
                 }
             }
             &::after {
-                margin: 3.9% auto 0;
+                margin: (40/$con_w)*100% auto 0;
                 content: "";
                 background: url(../img/img-diagnose-border.png) center center/cover;
                 max-width: 547px;
                 height: 19px;
                 display: block;
                 @include mq {
-                    margin: 5.33vw auto 0;
+                    margin: (20/$b_w_sp)*100vw auto 0;
                     background: url(../img/img-diagnose-border_sp.png) center center/cover;
 
                 }
             }
         }
         &-txt {
-            margin-top: 5.2%;
+            margin-top: (52.5/$con_w)*100%;
             font-size: calc(1.8rem + ((1vw - 0.378rem) * 1.3303));
             line-height: 1.67;
             @media screen and (min-width: 1280px) {
                 font-size: 3rem;
             }
             @include mq {
-                margin-top: 18.8vw;
+                margin-top: (70.5/$b_w_sp)*100vw;
             }
             @include mq(small) {
                 font-size: 1.8rem;
@@ -234,7 +236,7 @@ img {
     }
     .intro {
         &-ttl {
-            margin-top: 24.8%;
+            margin-top: (249/$con_w)*100%;
             font-weight: bold;
             text-align: center;
             font-size: calc(2.3rem + ((1vw - 0.378rem) * 6.3192));
@@ -248,59 +250,59 @@ img {
                 content: "";
                 display: inline-block;
                 vertical-align: middle;
-                width: 1.01vw;
+                width: (13/1280)*100vw;
                 max-width: 13px;
-                height: 7.42vw;
+                height: (95/1280)*100vw;
                 max-height: 95px;
                 border-radius: 11px;
                 background: #fff;
                 transform: rotate(-32deg);
-                margin: 0 2.3%;
+                margin: 0 (23.6/$con_w)*100%;
             }
             &::after {
                 transform: rotate(32deg);
             }
         }
         &-inner {
-            margin-top: 8.5%;
+            margin-top: (85.8/$con_w)*100%;
             display: flex;
             justify-content: space-between;
             @include mq {
-                margin-top: 13.94vw;
+                margin-top: (55.2/$b_w_sp)*100vw;
                 flex-direction: column;
             }
         }
         &-img {
-            width: 33.9%;
+            width: (341.78/$con_w)*100%;
             @include mq {
                 width: 100%;
             }
         }
         &-desc {
-            width: 45vw;
-            width: 57.6%;
+            width: (579/$con_w)*100%;
             @include mq {
                 width: 100%;
-                margin-top: 18.8vw;
+                margin-top: (70.5/$b_w_sp)*100vw;
             }
         }
         &-txt {
-            font-size: 20px;
+            font-size: 2rem;
             line-height: 1.5;
             &:not(:first-child) {
                 margin-top: 2em;
             }
         }
         &-btn {
-            margin-top: 17.27%;
+            margin-top: (100/579)*100%;
             max-width: 401px;
             height: 91px;
             border-radius: 51px;
             background: #fff;
             text-align: center;
             box-shadow: 7.2px 9px;
+            transition: all .1s ease-out;
             @include mq {
-                margin: 32vw auto 0;
+                margin: (120/$b_w_sp)*100vw auto 0;
                 max-width: 329px;
                 height: 75px;
             }
@@ -313,74 +315,79 @@ img {
                     line-height: 75px;
                 }
             }
+            &:hover {
+                transform: translate(7.2px, 9px);
+                box-shadow: 0 0;
+                
+            }
         }
     }
     .person {        
         background: #fff;
         .container {
-            width: 83%;
+            width: (834/1280)*100%;
             max-width: 834px;
             @include mq {
-                width: 85.86vw;
+                width: (322/$b_w_sp)*100vw;
             }
         }
         &-list {
-            margin-top: 38.3%;
-            padding: 9.7% 0 22.5% 0;
+            margin-top: (230.1/834)*100%;
+            padding: (81/834)*100% 0 (188/834)*100% 0;
             display: flex;
             justify-content: space-between;
             @include mq {
-                margin-top: 27.81vw;
-                padding: 33.06vw 0 46.13vw 0;
+                margin-top: (104.3/$b_w_sp)*100vw;
+                padding: (124/$b_w_sp)*100vw 0 (173/$b_w_sp)*100vw 0;
                 flex-direction: column;
             }
         }
         &-item {
-            width: 40.76%;
+            width: (340/834)*100%;
             @include mq {
                 width: 100%;
                 &:nth-child(2) {
-                    margin-top: 37.33vw;
+                    margin-top: (140/$b_w_sp)*100vw;
                 }
             }
         }
         &-thum {
             @include mq{
-                width: 65.5vw;
+                width: (246/$b_w_sp)*100vw;
                 margin: 0 auto;
             }
         }
         &-name {
-            margin-top: 33%;
+            margin-top: (107/340)*100%;
             font-size: calc(3rem + ((1vw - 0.378rem) * 0.2217));
             line-height: 1;
             @media screen and (min-width: 1280px) {
                 font-size: 3.2rem;
             }
             @include mq {
-                margin-top: 10.4vw;
+                margin-top: (39/$b_w_sp)*100vw;
             }
             @include mq(small) {
                 font-size: 3rem;
             }
         }
         &-txt {
-            margin-top: 4.9%;
+            margin-top: (16/340)*100%;
             line-height: 1.75;
             @include mq {
-                margin-top: 5.33vw;
+                margin-top: (20/$b_w_sp)*100vw;
             }
         }
         &-sns {
-            margin-top: 15.43%;
+            margin-top: (50/340)*100%;
             display: flex;
             @include mq {
-                margin-top: 5.6vw;
+                margin-top: (21/$b_w_sp)*100vw;
             }
             &:nth-of-type(2) {
-                margin-top: 5.24%;
+                margin-top: (17/340)*100%;
                 @include mq {
-                    margin-top: 4.26vw;
+                    margin-top: (16/$b_w_sp)*100vw;
                 }
             }
         }
@@ -389,7 +396,7 @@ img {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 18vw;
+        height: (227/1280)*100vw;
         max-height: 227px;
         min-height: 90px;
         &-inner {
@@ -398,7 +405,7 @@ img {
         &-list {
             display: flex;
             &:nth-child(2) {
-                margin-left: 4.76vw;
+                margin-left: (61/1280)*100vw;
             }
         }
     }
