@@ -273,9 +273,13 @@ img {
             }
         }
         &-img {
-            width: (341.78/$con_w)*100%;
-            @include mq {
-                width: 100%;
+            width: (330.39/$con_w)*100%;
+            @include mq { 
+                width: (332.68/$b_w_sp)*100vw;
+
+            }
+            img {
+                box-shadow: 13.4px -12.1px; 
             }
         }
         &-desc {
