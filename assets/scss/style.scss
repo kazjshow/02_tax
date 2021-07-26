@@ -94,6 +94,9 @@ img {
             }
             span {
                 display: inline-block;
+                width: fit-content;
+                // width: min-content;
+                // width: max-content;
                 font-size: calc(2.6rem + ((1vw - 0.378rem) * 5.9866));
                 line-height: 2.25;
                 padding: 0 .5em;
